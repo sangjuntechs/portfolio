@@ -1,16 +1,55 @@
-import React from "react";
-import Jepeto from "/Users/sangjun/Documents/junfolio/junfolio/src/videos/jepeto.mp4";
+import React, { useState } from "react";
+import Jepeto from "../videos/jepeto.mp4";
 import styled from "styled-components";
 import { FaAngleDown } from "react-icons/fa";
+import "../css/Home.css";
+import { Link } from "react-router-dom";
+import Img1 from '../img/jepeto1.jpeg'
+
+const Bodys = styled.div`
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+`;
+
+const JepetoImg1 = styled.img`
+  height: 60%;
+  width: 60%;
+`
 
 const Container = styled.div`
   height: 100vh;
   padding-left: 15%;
   padding-right: 15%;
+  transition: all 1s;
   @media screen and (max-width: 500px) {
     padding-left: 0;
     padding-right: 0;
   }
+`;
+
+const ListSection = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+`
+
+const MenuContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+`
+
+const Menu = styled.div`
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  transition: all 1s;
 `;
 
 const Video = styled.video`
@@ -22,13 +61,20 @@ const Video = styled.video`
     margin-top: 3rem;
   }
   @media screen and (max-width: 800px) {
-    width:28vw;
+    width: 28vw;
   }
   @media screen and (max-width: 450px) {
-    width:32vw;
+    width: 32vw;
   }
-  
 `;
+
+const ImgSection = styled.div`
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b44ff;
+`
 
 const Header = styled.div`
   display: flex;
@@ -47,7 +93,7 @@ const Header = styled.div`
 `;
 
 const IndigoFont = styled.p`
-  color: #4e1aff;
+  color: #5b44ff;
   margin-right: 0.7rem;
   margin-left: 0.7rem;
   font-weight: 600;
@@ -56,6 +102,19 @@ const IndigoFont = styled.p`
     margin-right: 0.2rem;
   }
 `;
+
+const MenuFont = styled.p`
+  font-weight: 300;
+  font-size: 4rem;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 2rem;
+  transition: 0.2s linear;
+  :hover {
+    color: #5b44ff;
+    box-shadow: 0 8px 4px -4px;
+  }
+`
 
 const Contents = styled.div`
   display: flex;
@@ -128,36 +187,68 @@ const DownClick = styled.div`
   animation: updown 0.5s infinite alternate linear;
   @media screen and (max-width: 450px) {
     margin-top: 3rem;
-    font-size:0.5rem;
+    font-size: 0.5rem;
   }
 `;
 
 const Home = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const openMenuClick = () => {
+    setOpenMenu(true);
+  };
+
+
+  document.addEventListener("mousewheel", function (event) {
+    console.log(event.wheelDelta);
+    if (event.wheelDelta >= 50) {
+      setOpenMenu(false);
+    }
+    if (event.wheelDelta < -70) {
+      setOpenMenu(true);
+    }
+  });
+
   return (
-    <Container>
-      <Header>
-        <IndigoFont>Welcome</IndigoFont> to Sangjun's Portfolio!👏🏻
-      </Header>
-      <Contents>
-        <Video src={Jepeto} autoPlay loop muted type="video/mp4" />
-        <TextContainer>
-          <NormalText>
-            안녕하세요 작고 소중한 <IndigoFont>신입</IndigoFont> 프론트앤드
-            개발자
-          </NormalText>
-          <NormalText>
-            <IndigoFont>' 박상준 '</IndigoFont> 입니다!
-          </NormalText>
-          <NormalText style={{ marginTop: "1.5rem" }}>
-            저의 포트폴리오를 방문해주셔서 감사합니다 :)
-          </NormalText>
-          <DownClick>
-            <p style={{ fontWeight: 400 }}>Go Index</p>
-            <FaAngleDown style={{ fontSize: "3rem" }} />
-          </DownClick>
-        </TextContainer>
-      </Contents>
-    </Container>
+    <Bodys>
+      <Container className={openMenu ? "up" : ""}>
+        <Header>
+          <IndigoFont>Welcome</IndigoFont> to Sangjun's Portfolio!👏🏻
+        </Header>
+        <Contents>
+          <Video src={Jepeto} autoPlay loop muted type="video/mp4" />
+          <TextContainer>
+            <NormalText>
+              안녕하세요. 작고 소중한 <IndigoFont>신입</IndigoFont> 프론트엔드
+              개발자
+            </NormalText>
+            <NormalText>
+              <IndigoFont>' 박상준 '</IndigoFont> 입니다!
+            </NormalText>
+            <NormalText style={{ marginTop: "1.5rem" }}>
+              저의 포트폴리오를 방문해주셔서 감사합니다 :)
+            </NormalText>
+            <DownClick onClick={openMenuClick}>
+              <p style={{ fontWeight: 400 }}>더 보기</p>
+              <FaAngleDown style={{ fontSize: "3rem" }} />
+            </DownClick>
+          </TextContainer>
+        </Contents>
+      </Container>
+      <Menu className={openMenu ? "active" : "un-active"}>
+        <MenuContainer>
+          <ListSection>
+           <MenuFont><Link to='/about'>About me</Link></MenuFont>
+           <MenuFont><Link to='/carrer'>Career</Link></MenuFont>
+           <MenuFont><Link to='/portfolio'>Portfolio</Link></MenuFont>
+           <MenuFont><Link to='/about'>Contact me</Link></MenuFont>
+          </ListSection>
+          <ImgSection>
+            <JepetoImg1 src={Img1} />
+          </ImgSection>
+        </MenuContainer>
+      </Menu>
+    </Bodys>
   );
 };
 

@@ -1,0 +1,21 @@
+.active {
+    top:0;
+}
+
+.un-active {
+    top:100vh;
+}
+
+.up {
+    transform: translateY(-100vh);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s linear;
+}
+
+a:hover {
+    color:#5b44ff;
+}
