@@ -35,6 +35,9 @@ const ListSection = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 4rem;
+  @media screen and (max-width: 1030px) {
+    width:100%;
+  }
 `
 
 const MenuContainer = styled.div`
@@ -49,7 +52,7 @@ const Menu = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: white;
-  transition: all 1s;
+  transition: 1s;
 `;
 
 const Video = styled.video`
@@ -74,6 +77,9 @@ const ImgSection = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #5b44ff;
+  @media screen and (max-width: 1030px) {
+    display: none;
+  }
 `
 
 const Header = styled.div`
@@ -200,7 +206,6 @@ const Home = () => {
 
 
   document.addEventListener("mousewheel", function (event) {
-    console.log(event.wheelDelta);
     if (event.wheelDelta >= 50) {
       setOpenMenu(false);
     }
