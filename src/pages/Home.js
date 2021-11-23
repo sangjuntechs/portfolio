@@ -244,7 +244,7 @@ const Home = () => {
         <MenuContainer>
           <ListSection>
            <MenuFont><Link to='/about'>About me</Link></MenuFont>
-           <MenuFont><Link to='/carrer'>Career</Link></MenuFont>
+           <MenuFont><Link to='/career'>Career</Link></MenuFont>
            <MenuFont><Link to='/portfolio'>Portfolio</Link></MenuFont>
            <MenuFont><Link to='/about'>Contact me</Link></MenuFont>
           </ListSection>

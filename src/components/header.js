@@ -4,15 +4,16 @@ import styled from 'styled-components';
 import Logo from '../img/PLogo.jpeg';
 import '../css/About.css';
 
-const Container = styled.div`
+const Container = styled.nav`
     display: flex;
     align-items: center;
     position: sticky;
     top: 0;
     width:100vw;
     height: 15vh;
-    background-color: white;
+    background-color: rgba(255,255,255,0.8);
     justify-content: space-around;
+    z-index: 10;
 `
 
 const ListContainer = styled.ul`
