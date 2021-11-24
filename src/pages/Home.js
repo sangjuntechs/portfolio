@@ -116,10 +116,6 @@ const MenuFont = styled.p`
   color: black;
   margin-bottom: 2rem;
   transition: 0.2s linear;
-  :hover {
-    color: #5b44ff;
-    box-shadow: 0 8px 4px -4px;
-  }
 `
 
 const Contents = styled.div`
