@@ -13,6 +13,12 @@ import TailwindImg from '../img/tailwindImg.png'
 import NodeImg from '../img/nodeImg.png'
 import NestImg from '../img/nestImg.png'
 import AwsImg from  '../img/awsImg.png'
+import SlackImg from '../img/slackImg.png'
+import NotionImg from '../img/notionImg.png'
+import FigmaImg from '../img/figmaImg.png'
+import JestImg from '../img/jestImg.png'
+import CypressImg from '../img/cypressImg.png'
+import { Qna } from "../components/Qna";
 
 const Body = styled.div`
   position: relative;
@@ -42,6 +48,16 @@ const Section3 = styled.div`
   padding-right: 15%;
   margin-top: 15rem;
   background-color: rgb(250,250,250);
+  padding-top:5rem;
+  padding-bottom:5rem;
+`;
+
+const Section4 = styled.div`
+  box-sizing: border-box;
+  width: 100vw;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 5rem;
   padding-top:5rem;
   padding-bottom:5rem;
 `;
@@ -209,6 +225,10 @@ const MidFont = styled.div`
   ${(props) => props.white && css`
     color:white;
   `}
+
+  ${(props) => props.spacing && css`
+    letter-spacing: 1.2px;
+  `}
 `;
 
 const MainTitle = styled.h1((props) => ({
@@ -230,7 +250,6 @@ const SubTitle = styled.h2((props) => ({
 const SkillContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: start;
   flex-wrap: wrap;
 `
 
@@ -364,50 +383,81 @@ const About = () => {
       </Section2>
       <Section3>
         <MainTitle margin_bottom="3rem">#2. Skill</MainTitle>
-        <SubTitle color="#5b44ff" margin_bottom="3rem">
-          프론트엔드
+        <SubTitle color="#5b44ff" margin_bottom="1rem">
+          Front-end
         </SubTitle>
         <SkillContainer>
         <SkillBox>
-          <ContentImg src={PubImage} i_width='300px' i_height='150px'/>
-          <MidFont border marginT >Publishing</MidFont>
+          <ContentImg src={PubImage} i_width='250px' i_height='100px'/>
+          <MidFont border marginT spacing >Publishing</MidFont>
         </SkillBox>
         <SkillBox>
-          <ContentImg src={TailwindImg} i_width='200px' i_height='150px' />
-          <MidFont border marginT >CSS Library</MidFont>
+          <ContentImg src={TailwindImg} i_width='150px' i_height='100px' />
+          <MidFont border marginT spacing >CSS Library</MidFont>
         </SkillBox>
         <SkillBox>
-          <ContentImg src={ReactImg} i_width='150px' i_height='150px' />
-          <MidFont border marginT >Framework/Library</MidFont>
+          <ContentImg src={ReactImg} i_width='100px' i_height='100px' />
+          <MidFont border marginT spacing >Framework/Library</MidFont>
         </SkillBox>
         <SkillBox>
-          <ContentImg src={TypeImg} i_width='200px' i_height='150px' />
-          <MidFont border marginT >Comfile Language</MidFont>
+          <ContentImg src={TypeImg} i_width='150px' i_height='100px' />
+          <MidFont border marginT spacing >Comfile Language</MidFont>
         </SkillBox>
         <SkillBox>
-          <ContentImg src={ApolloImg} i_width='300px' i_height='150px' />
-          <ContentImg src={GraphqlImg} i_width='150px' i_height='150px' />
+          <div style={{display:"flex"}}>
+          <ContentImg src={ApolloImg} i_width='250px' i_height='100px' />
+          <ContentImg src={GraphqlImg} i_width='100px' i_height='100px' />
+          </div>
           <MidFont border marginT >State Management</MidFont>
         </SkillBox>
         </SkillContainer>
-        <SubTitle color="#5b44ff" margin_bottom="3rem" margin_top="10rem">
-          백 엔드
+        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="5rem">
+          Back-end
         </SubTitle>
         <SkillContainer>
         <SkillBox>
-          <ContentImg src={NodeImg} i_width='250px' i_height='150px'/>
-          <MidFont border marginT >Node</MidFont>
+          <ContentImg src={NodeImg} i_width='200px' i_height='100px'/>
+          <MidFont border marginT spacing >Node</MidFont>
         </SkillBox>
         <SkillBox>
-          <ContentImg src={NestImg} i_width='150px' i_height='150px'/>
-          <MidFont border marginT >Node framwork</MidFont>
+          <ContentImg src={NestImg} i_width='100px' i_height='100px'/>
+          <MidFont border marginT spacing >Node framework</MidFont>
         </SkillBox>
         <SkillBox>
-          <ContentImg src={AwsImg} i_width='150px' i_height='150px'/>
-          <MidFont border marginT >AWS S3</MidFont>
+          <ContentImg src={AwsImg} i_width='100px' i_height='100px'/>
+          <MidFont border marginT spacing >AWS S3</MidFont>
+        </SkillBox>
+        </SkillContainer>
+        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="5rem">
+          Collaborate
+        </SubTitle>
+        <SkillContainer>
+        <SkillBox>
+          <ContentImg src={SlackImg} i_width='100px' i_height='100px'/>
+        </SkillBox>
+        <SkillBox>
+          <ContentImg src={NotionImg} i_width='100px' i_height='100px'/>
+        </SkillBox>
+        <SkillBox>
+          <ContentImg src={FigmaImg} i_width='200px' i_height='100px'/>
+        </SkillBox>
+        </SkillContainer>
+        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="5rem">
+          Testing
+        </SubTitle>
+        <SkillContainer>
+        <SkillBox>
+          <ContentImg src={JestImg} i_width='100px' i_height='100px'/>
+        </SkillBox>
+        <SkillBox>
+          <ContentImg src={CypressImg} i_width='100px' i_height='100px'/>
         </SkillBox>
         </SkillContainer>
       </Section3>
+      <Section4>
+      <MainTitle margin_bottom="3rem">#3. QnA</MainTitle>
+        <Qna />
+      </Section4>
       <Footer />
     </Body>
   );
