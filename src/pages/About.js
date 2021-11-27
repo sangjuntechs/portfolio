@@ -53,6 +53,10 @@ const Section3 = styled.div`
 `;
 
 const Section4 = styled.div`
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   box-sizing: border-box;
   width: 100vw;
   padding-left: 15%;
@@ -301,7 +305,7 @@ const About = () => {
                 Achievement
               </MidFont>{" "}
               <MidFont>한국공학대학교 (전 한국산업기술대)</MidFont>
-              <MidFont>IT 경영학과 졸.</MidFont>
+              <MidFont>IT / 경영학과 졸업</MidFont>
             </ColumnStyle>
           </CardTextSection>
         </GlassCard>
@@ -349,7 +353,7 @@ const About = () => {
         <MidFont lightWeight marginB>
           저는 아직 완성된 팀에서 엄청난 프로젝트를 해본 경험도 없고, 학원도
           다녀본 적 없고, 굉장한 이력도 없습니다. 그런건 괜찮습니다! 이제
-          시작하게 될 저가 채워나가야 할 것이니까요! 다만 아쉬운 것은 있습니다.
+          시작하게 될 제가 채워나가야 할 것이니까요! 다만 아쉬운 것은 있습니다.
           어떻게 해야 협업하는 사람과 더욱 간결하고 쉽게 커뮤니케이션 할 수
           있고, 어떠한 코드가 팀 규모로 일할 때 유리할지, 아직 혼자서 고민해보는
           단계밖에 거쳐보지 못했습니다. 그러한 이유로 요즘에는 '클린 코드'에
@@ -358,6 +362,11 @@ const About = () => {
           되고 싶습니다. 어떠한 제품을 내놓기까지 위해 저는 그 중 한 단계이니,
           그 단계에서 좌 우를 꽉 붙들어 단단히 연결하는 개발자가 되고 싶습니다
           :)
+        </MidFont>
+        <MidFont lightWeight marginB>
+          같은 프론트엔드 개발자 분들과 같은 프로젝트를 진행하며, 서로의 프로젝트를 pull하고,
+          리뷰하며, 하나처럼 움직이는 경험을 할 수 있으면 정말 좋을 것 같습니다! 어디에서나
+          같이 협업을 하면, 기분이 좋아지는 그런 개발자! 저의 1차 목표입니다.
         </MidFont>
         <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="10rem">
           당신의 장점?
@@ -455,7 +464,8 @@ const About = () => {
         </SkillContainer>
       </Section3>
       <Section4>
-      <MainTitle margin_bottom="3rem">#3. QnA</MainTitle>
+      <MainTitle margin_bottom="1rem">#3. QnA</MainTitle>
+      <SubTitle color="#5b44ff">저의 성향을 조금 더 아실 수 있도록!</SubTitle>
         <Qna />
       </Section4>
       <Footer />

@@ -10,10 +10,10 @@ const Container = styled.nav`
     position: sticky;
     top: 0;
     width:100vw;
-    height: 15vh;
+    height: 12vh;
     background-color: rgba(255,255,255,0.8);
     justify-content: space-around;
-    z-index: 10;
+    z-index: 100;
 `
 
 const ListContainer = styled.ul`
@@ -34,6 +34,18 @@ const PLogo = styled.img`
     border-radius: 100%;
 `
 
+const ColumnStyle = styled.div`
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+`
+
+const Font = styled.p`
+    letter-spacing: 1.1px;
+    margin-top: 5px;
+    font-weight: 600;
+`
+
 export const Header = () => {
     const [nUrl, setNUrl] = useState('');
 
@@ -46,7 +58,10 @@ export const Header = () => {
     return(
 
     <Container>
+        <ColumnStyle>
         <Link to='/'><PLogo src={Logo} alt='로고'/></Link>
+        <Font>Jun's Portfolio</Font>
+        </ColumnStyle>
         <ListContainer>
             <List className={nUrl === 'about' ? 'header_highlight' : ''}><Link to='/about'>About</Link></List>
             <List className={nUrl === 'career' ? 'header_highlight' : ''}><Link to='/career'>Career</Link></List>
