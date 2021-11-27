@@ -44,19 +44,24 @@ export const Qna = () => {
         </div>
         <div className="detail">
           <Img src={QuoteImg} />
-          <Font color="rgb(80,80,80)" font_size="1.2rem" margin_bottom="1rem">
+          <Font
+            color="rgb(80,80,80)"
+            font_size="1.2rem"
+            margin_bottom="1rem"
+            font_weight="600"
+          >
             큰 덩어리 먼저!
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='15px'>
-            아예 방향성이 잡히지 않는 경우는 비슷한 유형의 코드를 찾고 찾습니다. 구글에 검색도 하고,
-            유튜브도 찾아보고..
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="15px">
+            아예 방향성이 잡히지 않는 경우는 비슷한 유형의 코드를 찾고 찾습니다.
+            구글에 검색도 하고, 유튜브도 찾아보고..
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='15px'>
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="15px">
             ex) how to pagination from backend?
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='15px'>
-            그렇게 커다란 방향성을 먼저 찾고, 필요한 기술 및 라이브러리를 찾아가다 보면 어느새 조금 씩
-            결과에 가까워지고 있었습니다!
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="15px">
+            그렇게 커다란 방향성을 먼저 찾고, 필요한 기술 및 라이브러리를
+            찾아가다 보면 어느새 조금 씩 결과에 가까워지고 있었습니다!
           </Font>
         </div>
       </div>
@@ -72,10 +77,15 @@ export const Qna = () => {
         </div>
         <div className="detail">
           <Img src={QuoteImg} />
-          <Font color="rgb(80,80,80)" font_size="1.2rem" margin_bottom="1rem">
+          <Font
+            color="rgb(80,80,80)"
+            font_size="1.2rem"
+            margin_bottom="1rem"
+            font_weight="600"
+          >
             한숨을 환희로!
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='15px'>
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="15px">
             식단 관리 어플리케이션 관리자 페이지를 제작 중 영양사 분이 관리자
             페이지를 사용하는데 어려움을 겪는 것을 보았습니다.
           </Font>
@@ -98,15 +108,22 @@ export const Qna = () => {
         </div>
         <div className="detail">
           <Img src={QuoteImg} />
-          <Font color="rgb(80,80,80)" font_size="1.2rem" margin_bottom="1rem">
+          <Font
+            color="rgb(80,80,80)"
+            font_size="1.2rem"
+            margin_bottom="1rem"
+            font_weight="600"
+          >
             이건 뭐지?
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='1rem'>
-            호기심이 많아 버린 저는 어떠한 정보가 들어오면 이게 왜 나온거지? 라며 의문을 가집니다.
-            보통 레딧, 유튜브에서 정보를 찾아보기도 하고 그 정보를 기반으로 구글에 검색도 해봅니다!
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            호기심이 많아 버린 저는 어떠한 정보가 들어오면 이게 왜 나온거지?
+            라며 의문을 가집니다. 보통 레딧, 유튜브에서 정보를 찾아보기도 하고
+            그 정보를 기반으로 구글에 검색도 해봅니다!
           </Font>
           <Font font_weight="400" font_size="0.9rem">
-            React-router가 선언 방식이 자꾸 달라지길래 이건 왜 자꾸 바꾸는거야.. 짜증내면서 찾아보기도 하고 바로 수긍합니다.😅
+            React-router가 선언 방식이 자꾸 달라지길래 이건 왜 자꾸 바꾸는거야..
+            짜증내면서 찾아보기도 하고 바로 수긍합니다.😅
           </Font>
         </div>
       </div>
@@ -122,15 +139,21 @@ export const Qna = () => {
         </div>
         <div className="detail">
           <Img src={QuoteImg} />
-          <Font color="rgb(80,80,80)" font_size="1.2rem" margin_bottom="1rem">
+          <Font
+            color="rgb(80,80,80)"
+            font_size="1.2rem"
+            margin_bottom="1rem"
+            font_weight="600"
+          >
             내가 시니어?!
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='1rem'>
-            5년차 미드, 시니어 개발자가 되어서 주니어 분들과 함께 좀더 커다란(?) 덩어리를 맡아서
-            제품 서비스를 개발하고 있을 것 같습니다.
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            5년차 미드, 시니어 개발자가 되어서 주니어 분들과 함께 좀더 커다란(?)
+            덩어리를 맡아서 제품 서비스를 개발하고 있을 것 같습니다.
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='1rem'>
-            좀 더 믿음직스럽고, 스케줄링도 완벽히 해내는 멋진 시니어 개발자로 진화하고 싶습니다.
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            좀 더 믿음직스럽고, 스케줄링도 완벽히 해내는 멋진 시니어 개발자로
+            진화하고 싶습니다.
           </Font>
         </div>
       </div>
@@ -146,16 +169,21 @@ export const Qna = () => {
         </div>
         <div className="detail">
           <Img src={QuoteImg} />
-          <Font color="rgb(80,80,80)" font_size="1.2rem" margin_bottom="1rem">
+          <Font
+            color="rgb(80,80,80)"
+            font_size="1.2rem"
+            margin_bottom="1rem"
+            font_weight="600"
+          >
             최고의 컴퓨터 번역가.
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='1rem'>
-            프로그래머는 인간과 컴퓨터 사이의 번역가라고 생각합니다. 사람의 생각을 컴퓨터의 언어로
-            번역하여 이루어내는!
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            프로그래머는 인간과 컴퓨터 사이의 번역가라고 생각합니다. 사람의
+            생각을 컴퓨터의 언어로 번역하여 이루어내는!
           </Font>
-          <Font font_weight="400" font_size="0.9rem" margin_bottom='1rem'>
-            모든 사람의 생각을 완벽하게 컴퓨터 언어로 번역하는 최고의 번역가가 되어 최고의 프론트엔드
-            팀을 이끄는 CTO,TechLead가 되고 싶습니다.
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            모든 사람의 생각을 완벽하게 컴퓨터 언어로 번역하는 최고의 번역가가
+            되어 최고의 프론트엔드 팀을 이끄는 CTO,TechLead가 되고 싶습니다.
           </Font>
         </div>
       </div>

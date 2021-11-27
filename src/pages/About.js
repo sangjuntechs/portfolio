@@ -31,6 +31,7 @@ const Section1 = styled.div`
   align-items: center;
   height: 75vh;
   width: 100vw;
+  flex-direction: column;
 `;
 
 const Section2 = styled.div`
@@ -78,11 +79,15 @@ const CardContainer = styled.div`
 `;
 
 const GlassCard = styled.div`
+@media screen and (max-width: 900px) {
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+  }
   box-sizing: border-box;
   display: flex;
   position: absolute;
   width: 43vw;
-  height: 55vh;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 30px;
   border: 2px solid white;
@@ -120,6 +125,9 @@ const Round1 = styled.span`
   background-color: #8b44ff;
   border-radius: 100%;
   z-index: 4;
+  @media screen and (max-width: 900px) {
+   display: none;
+  }
 `;
 
 const Round2 = styled.span`
@@ -132,6 +140,9 @@ const Round2 = styled.span`
   background-color: #5b44ff;
   border-radius: 100%;
   z-index: 3;
+  @media screen and (max-width: 900px) {
+   display: none;
+  }
 `;
 
 const CardTextSection = styled.div`
@@ -147,6 +158,9 @@ const CardTextSection = styled.div`
 
 const BigFont = styled.p`
   font-size: 2rem;
+  @media screen and (max-width: 500px) {
+   font-size: 1.5rem;
+  }
 `;
 
 const SmallFont = styled.p`
@@ -157,6 +171,10 @@ const SmallFont = styled.p`
     css`
       color: black;
     `}
+    @media screen and (max-width: 500px) {
+   font-size: 0.8rem;
+   margin-bottom: 15px;
+  }
 `;
 
 const ImageSection = styled.div`
@@ -164,6 +182,14 @@ const ImageSection = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  @media screen and (max-width: 900px) {
+    width: 45%;
+    height: 300px;
+  }
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+  
 `;
 
 const ProfileImg = styled.img`
@@ -173,7 +199,8 @@ const ProfileImg = styled.img`
   border-radius: 30px;
 `;
 
-const ContentImg = styled.img(props =>({
+const ContentImg = styled.img
+  (props =>({
   width: props.i_width,
   height: props.i_height,
 }))
@@ -233,7 +260,20 @@ const MidFont = styled.div`
   ${(props) => props.spacing && css`
     letter-spacing: 1.2px;
   `}
+  @media screen and (max-width: 900px) {
+   font-size:0.9rem;
+   letter-spacing: 1.2px;
+  }
 `;
+
+const CardSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+`
 
 const MainTitle = styled.h1((props) => ({
   fontSize: "2.5rem",
@@ -255,6 +295,7 @@ const SkillContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 3rem;
 `
 
 const SkillBox = styled.div`
@@ -268,7 +309,26 @@ const SkillBox = styled.div`
   margin-top:1.5rem;
   box-shadow: 2px 4px 8px gray;
   background-color: white;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    max-width: 200px;
+  }
+  @media screen and (max-width: 500px) {
+   max-width: 100%;
+   box-shadow:none;
+   background-color: rgba(250,250,250);
+   margin: 0;
+  }
 `;
+
+const Inline = styled.div`
+  display: flex;
+  @media screen and (max-width: 500px) {
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+`
 
 const About = () => {
   return (
@@ -279,6 +339,7 @@ const About = () => {
           <Round1></Round1>
           <Round2></Round2>
         </CardContainer>
+        <CardSection>
         <GlassCard>
           <ImageSection>
             <ProfileImg src={profileImage} />
@@ -309,6 +370,7 @@ const About = () => {
             </ColumnStyle>
           </CardTextSection>
         </GlassCard>
+        </CardSection>
       </Section1>
       <Section2>
         <MainTitle margin_bottom="3rem">#1. Introduce</MainTitle>
@@ -413,10 +475,10 @@ const About = () => {
           <MidFont border marginT spacing >Comfile Language</MidFont>
         </SkillBox>
         <SkillBox>
-          <div style={{display:"flex"}}>
+          <Inline>
           <ContentImg src={ApolloImg} i_width='250px' i_height='100px' />
           <ContentImg src={GraphqlImg} i_width='100px' i_height='100px' />
-          </div>
+          </Inline>
           <MidFont border marginT >State Management</MidFont>
         </SkillBox>
         </SkillContainer>

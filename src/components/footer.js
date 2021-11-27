@@ -14,6 +14,9 @@ const Font = styled.p`
   letter-spacing: 1.2px;
   font-weight: 500;
   color: #5b44ff;
+  @media screen and (max-width: 500px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Footer = () => {
