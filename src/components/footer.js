@@ -7,6 +7,9 @@ const Container = styled.div`
   align-items: center;
   padding: 3rem;
   border-top: 1px solid #5b44ff;
+  @media screen and (max-width: 500px) {
+    padding: 1.5rem;
+  }
 `;
 
 const Font = styled.p`
@@ -15,7 +18,7 @@ const Font = styled.p`
   font-weight: 500;
   color: #5b44ff;
   @media screen and (max-width: 500px) {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `;
 

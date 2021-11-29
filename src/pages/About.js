@@ -1,23 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "../components/header";
 import styled, { css } from "styled-components";
 import profileImage from "../img/about_jepeto.jpeg";
 import { Footer } from "../components/footer";
 import PubImage from "../img/pubImg.png";
-import ReactImg from '../img/reactImg.png'
-import TypeImg from '../img/typescriptImg.png'
-import ApolloImg from '../img/apolloImg.png'
-import GraphqlImg from '../img/graphqlImg.png'
-import TailwindImg from '../img/tailwindImg.png'
-import NodeImg from '../img/nodeImg.png'
-import NestImg from '../img/nestImg.png'
-import AwsImg from  '../img/awsImg.png'
-import SlackImg from '../img/slackImg.png'
-import NotionImg from '../img/notionImg.png'
-import FigmaImg from '../img/figmaImg.png'
-import JestImg from '../img/jestImg.png'
-import CypressImg from '../img/cypressImg.png'
+import ReactImg from "../img/reactImg.png";
+import TypeImg from "../img/typescriptImg.png";
+import ApolloImg from "../img/apolloImg.png";
+import GraphqlImg from "../img/graphqlImg.png";
+import TailwindImg from "../img/tailwindImg.png";
+import NodeImg from "../img/nodeImg.png";
+import NestImg from "../img/nestImg.png";
+import AwsImg from "../img/awsImg.png";
+import SlackImg from "../img/slackImg.png";
+import NotionImg from "../img/notionImg.png";
+import FigmaImg from "../img/figmaImg.png";
+import JestImg from "../img/jestImg.png";
+import CypressImg from "../img/cypressImg.png";
+import reactTestImg from '../img/reacttestImg.png'
 import { Qna } from "../components/Qna";
 
 const Body = styled.div`
@@ -48,9 +49,9 @@ const Section3 = styled.div`
   padding-left: 15%;
   padding-right: 15%;
   margin-top: 15rem;
-  background-color: rgb(250,250,250);
-  padding-top:5rem;
-  padding-bottom:5rem;
+  background-color: rgb(250, 250, 250);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 `;
 
 const Section4 = styled.div`
@@ -63,8 +64,8 @@ const Section4 = styled.div`
   padding-left: 15%;
   padding-right: 15%;
   margin-top: 5rem;
-  padding-top:5rem;
-  padding-bottom:5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 `;
 
 const CardContainer = styled.div`
@@ -79,7 +80,7 @@ const CardContainer = styled.div`
 `;
 
 const GlassCard = styled.div`
-@media screen and (max-width: 900px) {
+  @media screen and (max-width: 900px) {
     width: 85%;
     flex-direction: column;
     align-items: center;
@@ -126,7 +127,7 @@ const Round1 = styled.span`
   border-radius: 100%;
   z-index: 4;
   @media screen and (max-width: 900px) {
-   display: none;
+    display: none;
   }
 `;
 
@@ -141,7 +142,7 @@ const Round2 = styled.span`
   border-radius: 100%;
   z-index: 3;
   @media screen and (max-width: 900px) {
-   display: none;
+    display: none;
   }
 `;
 
@@ -159,7 +160,7 @@ const CardTextSection = styled.div`
 const BigFont = styled.p`
   font-size: 2rem;
   @media screen and (max-width: 500px) {
-   font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -171,9 +172,9 @@ const SmallFont = styled.p`
     css`
       color: black;
     `}
-    @media screen and (max-width: 500px) {
-   font-size: 0.8rem;
-   margin-bottom: 15px;
+  @media screen and (max-width: 500px) {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
   }
 `;
 
@@ -189,7 +190,6 @@ const ImageSection = styled.div`
   @media screen and (max-width: 500px) {
     display: none;
   }
-  
 `;
 
 const ProfileImg = styled.img`
@@ -199,11 +199,10 @@ const ProfileImg = styled.img`
   border-radius: 30px;
 `;
 
-const ContentImg = styled.img
-  (props =>({
+const ContentImg = styled.img((props) => ({
   width: props.i_width,
   height: props.i_height,
-}))
+}));
 const ColumnStyle = styled.div`
   display: flex;
   width: 100%;
@@ -250,19 +249,25 @@ const MidFont = styled.div`
       letter-spacing: 1.5px;
       line-height: 25px;
     `}
-  ${(props) => props.marginT && css`
-    margin-top:1.5rem;
-  `}
-  ${(props) => props.white && css`
-    color:white;
-  `}
+  ${(props) =>
+    props.marginT &&
+    css`
+      margin-top: 1.5rem;
+    `}
+  ${(props) =>
+    props.white &&
+    css`
+      color: white;
+    `}
 
-  ${(props) => props.spacing && css`
-    letter-spacing: 1.2px;
-  `}
+  ${(props) =>
+    props.spacing &&
+    css`
+      letter-spacing: 1.2px;
+    `}
   @media screen and (max-width: 900px) {
-   font-size:0.9rem;
-   letter-spacing: 1.2px;
+    font-size: 0.9rem;
+    letter-spacing: 1.2px;
   }
 `;
 
@@ -273,10 +278,10 @@ const CardSection = styled.div`
   width: 100%;
   position: absolute;
   height: 100%;
-`
+`;
 
 const MainTitle = styled.h1((props) => ({
-  fontSize: "2.5rem",
+  fontSize: props.font_size,
   fontWeight: 600,
   marginTop: props.margin_top,
   marginBottom: props.margin_bottom,
@@ -285,7 +290,7 @@ const MainTitle = styled.h1((props) => ({
 
 const SubTitle = styled.h2((props) => ({
   color: props.color,
-  fontSize: "2rem",
+  fontSize: props.font_size,
   fontWeight: 500,
   marginBottom: props.margin_bottom,
   marginTop: props.margin_top,
@@ -296,17 +301,17 @@ const SkillContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   padding: 3rem;
-`
+`;
 
 const SkillBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
   padding: 2.5rem 4.5rem 2.5rem 4.5rem;
-  border-radius:15px;
+  border-radius: 15px;
   margin-right: 1.5rem;
-  margin-top:1.5rem;
+  margin-top: 1.5rem;
   box-shadow: 2px 4px 8px gray;
   background-color: white;
   @media screen and (max-width: 1000px) {
@@ -314,23 +319,41 @@ const SkillBox = styled.div`
     max-width: 200px;
   }
   @media screen and (max-width: 500px) {
-   max-width: 100%;
-   box-shadow:none;
-   background-color: rgba(250,250,250);
-   margin: 0;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: rgba(250, 250, 250);
+    margin: 0;
   }
 `;
 
 const Inline = styled.div`
   display: flex;
   @media screen and (max-width: 500px) {
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-`
+`;
 
 const About = () => {
+  const [innerWidth, setInnerWidth] = useState(0);
+
+  useEffect(() => {
+    let queryWidth = window.innerWidth;
+    setInnerWidth(queryWidth);
+  }, [innerWidth]);
+
+  let titleWidth = "2.5rem";
+  let subTitleWidth = "2rem";
+
+  const changeTitleWidth = () => {
+    if (innerWidth < 530) {
+      titleWidth = "1.8rem";
+      subTitleWidth = "1.4rem";
+    }
+  };
+
+  changeTitleWidth();
   return (
     <Body>
       <Header />
@@ -340,41 +363,47 @@ const About = () => {
           <Round2></Round2>
         </CardContainer>
         <CardSection>
-        <GlassCard>
-          <ImageSection>
-            <ProfileImg src={profileImage} />
-          </ImageSection>
-          <CardTextSection>
-            <ColumnStyle>
-              <BigFont>박 상준</BigFont>
-              <SmallFont>(PARK SANGJUN)</SmallFont>
-            </ColumnStyle>
-            <ColumnStyle>
-              <MidFont gray border sMarginB>
-                Phone
-              </MidFont>
-              <MidFont marginB> T. +82 (0)10 3977 9827</MidFont>
-              <MidFont gray border sMarginB>
-                Address
-              </MidFont>{" "}
-              <MidFont marginB>Gangdong-gu, Seoul, Republic of Korea</MidFont>
-              <MidFont gray border sMarginB>
-                Email
-              </MidFont>{" "}
-              <MidFont marginB>devjun0421@gmail.com</MidFont>
-              <MidFont gray border sMarginB>
-                Achievement
-              </MidFont>{" "}
-              <MidFont>한국공학대학교 (전 한국산업기술대)</MidFont>
-              <MidFont>IT / 경영학과 졸업</MidFont>
-            </ColumnStyle>
-          </CardTextSection>
-        </GlassCard>
+          <GlassCard>
+            <ImageSection>
+              <ProfileImg src={profileImage} />
+            </ImageSection>
+            <CardTextSection>
+              <ColumnStyle>
+                <BigFont>박 상준</BigFont>
+                <SmallFont>(PARK SANGJUN)</SmallFont>
+              </ColumnStyle>
+              <ColumnStyle>
+                <MidFont gray border sMarginB>
+                  Phone
+                </MidFont>
+                <MidFont marginB> T. +82 (0)10 3977 9827</MidFont>
+                <MidFont gray border sMarginB>
+                  Address
+                </MidFont>{" "}
+                <MidFont marginB>Gangdong-gu, Seoul, Republic of Korea</MidFont>
+                <MidFont gray border sMarginB>
+                  Email
+                </MidFont>{" "}
+                <MidFont marginB>devjun0421@gmail.com</MidFont>
+                <MidFont gray border sMarginB>
+                  Achievement
+                </MidFont>{" "}
+                <MidFont>한국공학대학교 (전 한국산업기술대)</MidFont>
+                <MidFont>IT / 경영학과 졸업</MidFont>
+              </ColumnStyle>
+            </CardTextSection>
+          </GlassCard>
         </CardSection>
       </Section1>
       <Section2>
-        <MainTitle margin_bottom="3rem">#1. Introduce</MainTitle>
-        <SubTitle color="#5b44ff" margin_bottom="1rem">
+        <MainTitle margin_bottom="3rem" font_size={titleWidth}>
+          #1. Introduce
+        </MainTitle>
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          font_size={subTitleWidth}
+        >
           안녕하세요.
         </SubTitle>
         <MidFont lightWeight marginB>
@@ -409,7 +438,12 @@ const About = () => {
           <TextHighlight>개발자는 개발 3 커뮤니케이션 7</TextHighlight>이라는
           말이 있는게 아니라는 생각을 해보기도 하였습니다!
         </MidFont>
-        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="10rem">
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          margin_top="10rem"
+          font_size={subTitleWidth}
+        >
           내가 생각하는 나의 부족한 점?
         </SubTitle>
         <MidFont lightWeight marginB>
@@ -426,11 +460,17 @@ const About = () => {
           :)
         </MidFont>
         <MidFont lightWeight marginB>
-          같은 프론트엔드 개발자 분들과 같은 프로젝트를 진행하며, 서로의 프로젝트를 pull하고,
-          리뷰하며, 하나처럼 움직이는 경험을 할 수 있으면 정말 좋을 것 같습니다! 어디에서나
-          같이 협업을 하면, 기분이 좋아지는 그런 개발자! 저의 1차 목표입니다.
+          같은 프론트엔드 개발자 분들과 같은 프로젝트를 진행하며, 서로의
+          프로젝트를 pull하고, 리뷰하며, 하나처럼 움직이는 경험을 할 수 있으면
+          정말 좋을 것 같습니다! 어디에서나 같이 협업을 하면, 기분이 좋아지는
+          그런 개발자! 저의 1차 목표입니다.
         </MidFont>
-        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="10rem">
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          margin_top="10rem"
+          font_size={subTitleWidth}
+        >
           당신의 장점?
         </SubTitle>
         <MidFont lightWeight marginB>
@@ -453,81 +493,144 @@ const About = () => {
         </MidFont>
       </Section2>
       <Section3>
-        <MainTitle margin_bottom="3rem">#2. Skill</MainTitle>
-        <SubTitle color="#5b44ff" margin_bottom="1rem">
+        <MainTitle margin_bottom="3rem" font_size={titleWidth}>
+          #2. Skill
+        </MainTitle>
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          font_size={subTitleWidth}
+        >
           Front-end
         </SubTitle>
         <SkillContainer>
-        <SkillBox>
-          <ContentImg src={PubImage} i_width='250px' i_height='100px'/>
-          <MidFont border marginT spacing >Publishing</MidFont>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={TailwindImg} i_width='150px' i_height='100px' />
-          <MidFont border marginT spacing >CSS Library</MidFont>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={ReactImg} i_width='100px' i_height='100px' />
-          <MidFont border marginT spacing >Framework/Library</MidFont>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={TypeImg} i_width='150px' i_height='100px' />
-          <MidFont border marginT spacing >Comfile Language</MidFont>
-        </SkillBox>
-        <SkillBox>
-          <Inline>
-          <ContentImg src={ApolloImg} i_width='250px' i_height='100px' />
-          <ContentImg src={GraphqlImg} i_width='100px' i_height='100px' />
-          </Inline>
-          <MidFont border marginT >State Management</MidFont>
-        </SkillBox>
+          <SkillBox>
+            <ContentImg src={PubImage} i_width="250px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Publishing
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={TailwindImg} i_width="150px" i_height="100px" />
+            <MidFont border marginT spacing>
+              CSS Library
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={ReactImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Framework/Library
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={TypeImg} i_width="150px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Comfile Language
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <Inline>
+              <ContentImg src={ApolloImg} i_width="250px" i_height="100px" />
+              <ContentImg src={GraphqlImg} i_width="100px" i_height="100px" />
+            </Inline>
+            <MidFont border marginT>
+              State Management
+            </MidFont>
+          </SkillBox>
         </SkillContainer>
-        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="5rem">
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          margin_top="5rem"
+          font_size={subTitleWidth}
+        >
           Back-end
         </SubTitle>
         <SkillContainer>
-        <SkillBox>
-          <ContentImg src={NodeImg} i_width='200px' i_height='100px'/>
-          <MidFont border marginT spacing >Node</MidFont>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={NestImg} i_width='100px' i_height='100px'/>
-          <MidFont border marginT spacing >Node framework</MidFont>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={AwsImg} i_width='100px' i_height='100px'/>
-          <MidFont border marginT spacing >AWS S3</MidFont>
-        </SkillBox>
+          <SkillBox>
+            <ContentImg src={NodeImg} i_width="200px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Node
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={NestImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Node framework
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={AwsImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              AWS S3
+            </MidFont>
+          </SkillBox>
         </SkillContainer>
-        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="5rem">
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          margin_top="5rem"
+          font_size={subTitleWidth}
+        >
           Collaborate
         </SubTitle>
         <SkillContainer>
-        <SkillBox>
-          <ContentImg src={SlackImg} i_width='100px' i_height='100px'/>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={NotionImg} i_width='100px' i_height='100px'/>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={FigmaImg} i_width='200px' i_height='100px'/>
-        </SkillBox>
+          <SkillBox>
+            <ContentImg src={SlackImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Slack
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={NotionImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Notion
+            </MidFont>
+          </SkillBox>
+
+          <SkillBox>
+            <ContentImg src={FigmaImg} i_width="200px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Figma
+            </MidFont>
+          </SkillBox>
         </SkillContainer>
-        <SubTitle color="#5b44ff" margin_bottom="1rem" margin_top="5rem">
+        <SubTitle
+          color="#5b44ff"
+          margin_bottom="1rem"
+          margin_top="5rem"
+          font_size={subTitleWidth}
+        >
           Testing
         </SubTitle>
         <SkillContainer>
-        <SkillBox>
-          <ContentImg src={JestImg} i_width='100px' i_height='100px'/>
-        </SkillBox>
-        <SkillBox>
-          <ContentImg src={CypressImg} i_width='100px' i_height='100px'/>
-        </SkillBox>
+          <SkillBox>
+            <ContentImg src={JestImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Jest
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={CypressImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              Cypress
+            </MidFont>
+          </SkillBox>
+          <SkillBox>
+            <ContentImg src={reactTestImg} i_width="100px" i_height="100px" />
+            <MidFont border marginT spacing>
+              React-Testing-Library
+            </MidFont>
+          </SkillBox>
         </SkillContainer>
       </Section3>
       <Section4>
-      <MainTitle margin_bottom="1rem">#3. QnA</MainTitle>
-      <SubTitle color="#5b44ff">저의 성향을 조금 더 아실 수 있도록!</SubTitle>
+        <MainTitle margin_bottom="1rem" font_size={titleWidth}>
+          #3. QnA
+        </MainTitle>
+        <SubTitle color="#5b44ff" font_size={subTitleWidth}>
+          저의 성향을 조금 더 아실 수 있도록!
+        </SubTitle>
         <Qna />
       </Section4>
       <Footer />

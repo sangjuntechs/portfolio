@@ -199,8 +199,22 @@ export const Qna = () => {
         </div>
         <div className="detail">
           <Img src={QuoteImg} />
-          <h2>시작하게 되었습니다.</h2>
-          <p>네 그렇습니다.</p>
+          <Font
+            color="rgb(80,80,80)"
+            font_size="1.2rem"
+            margin_bottom="1rem"
+            font_weight="600"
+          >
+            이제 알겠다!
+          </Font>
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            가장 이 기술을 이해하기 쉬운 방법은 체득이라고 생각합니다! 왜 이걸 사용하고 있지?
+            분명, 사용하다 보면 어떠한 한계점이나 아쉬운 부분이 생겼습니다.
+          </Font>
+          <Font font_weight="400" font_size="0.9rem" margin_bottom="1rem">
+            그 과정을 거치고 다시 문서를 보면, 이해가 되지 않았던게 자연스럽게 너무나도 명확하게
+            이해가 되는 경우가 있습니다. 이 때 저는 아! 내가 성장했다는 생각이 들었습니다.
+          </Font>
         </div>
       </div>
     </div>
