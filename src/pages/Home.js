@@ -38,6 +38,7 @@ const ListSection = styled.div`
   @media screen and (max-width: 1030px) {
     width:100%;
   }
+  
 `
 
 const MenuContainer = styled.div`
@@ -116,6 +117,9 @@ const MenuFont = styled.p`
   color: black;
   margin-bottom: 2rem;
   transition: 0.2s linear;
+  @media screen and (max-width: 500px) {
+    font-size: 2rem;
+  }
 `
 
 const Contents = styled.div`

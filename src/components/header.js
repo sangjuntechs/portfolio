@@ -9,11 +9,14 @@ const Container = styled.nav`
     align-items: center;
     position: sticky;
     top: 0;
-    width:100vw;
+    padding:0 15% 0 15%;
     height: 12vh;
     background-color: rgba(255,255,255,0.8);
-    justify-content: space-around;
+    justify-content: space-between;
     z-index: 100;
+    @media screen and (max-width: 499px) {
+    padding: 0;
+    }
 `
 
 const ListContainer = styled.ul`
