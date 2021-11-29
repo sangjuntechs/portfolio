@@ -164,7 +164,7 @@ export const Qna = () => {
             Question 5.
           </Font>
           <Font font_size="1rem" font_weight="500">
-            최종 커리어 골이 어떻게 되시는 지?
+            최종 커리어 골이 어떻게 되시는지?
           </Font>
         </div>
         <div className="detail">

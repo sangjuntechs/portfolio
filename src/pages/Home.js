@@ -242,7 +242,7 @@ const Home = () => {
            <MenuFont><Link to='/about'>About me</Link></MenuFont>
            <MenuFont><Link to='/career'>Career</Link></MenuFont>
            <MenuFont><Link to='/portfolio'>Portfolio</Link></MenuFont>
-           <MenuFont><Link to='/about'>Contact me</Link></MenuFont>
+           <MenuFont><Link to='/contact'>Contact me</Link></MenuFont>
           </ListSection>
           <ImgSection>
             <JepetoImg1 src={Img1} />
