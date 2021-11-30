@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { ScrollTop } from "../components/ScrollTopcomp";
 import About from "../pages/About";
 import Career from "../pages/Career";
 import Contact from "../pages/Contact";
@@ -10,6 +11,7 @@ export const Approuter = () => {
  
   return (
   <BrowserRouter>
+  <ScrollTop />
     <Routes>
       <Route path="/" exact element={<Home />} />
       <Route path="/about" exact element={<About />} />

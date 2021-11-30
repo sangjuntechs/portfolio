@@ -20,9 +20,11 @@ import JestImg from "../img/jestImg.png";
 import CypressImg from "../img/cypressImg.png";
 import reactTestImg from '../img/reacttestImg.png'
 import { Qna } from "../components/Qna";
+import { QnaMobile } from "../components/QnaMobile";
 
 const Body = styled.div`
   position: relative;
+  font-family: 'Gothic A1', sans-serif;
 `;
 
 const Section1 = styled.div`
@@ -64,7 +66,6 @@ const Section4 = styled.div`
   flex-direction: column;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   box-sizing: border-box;
   width: 100vw;
   padding-left: 15%;
@@ -628,7 +629,7 @@ const About = () => {
           <SkillBox>
             <ContentImg src={reactTestImg} i_width="100px" i_height="100px" />
             <MidFont border marginT spacing>
-              React-Testing-Library
+              React-Testing
             </MidFont>
           </SkillBox>
         </SkillContainer>
@@ -641,6 +642,7 @@ const About = () => {
           저는 이렇습니다!
         </SubTitle>
         <Qna />
+        <QnaMobile />
       </Section4>
       <Footer />
     </Body>

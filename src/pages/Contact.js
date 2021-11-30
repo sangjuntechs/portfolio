@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ContantItem } from '../components/contactItem'
+import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 
 const BodyContainer = styled.div`
@@ -8,7 +9,7 @@ const BodyContainer = styled.div`
 `
 
 const ItemContainer = styled.div`
-    padding: 0 15% 0 15%;
+    padding: 0 15% 10rem 15%;
 `
 
 const Section1 = styled.div`
@@ -27,6 +28,7 @@ const Contact = () => {
                 <ContantItem />
                 </Section1>
             </ItemContainer>
+            <Footer/>
         </BodyContainer>
     )
 }

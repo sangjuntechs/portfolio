@@ -8,6 +8,7 @@ const Container = styled.nav`
     display: flex;
     align-items: center;
     position: sticky;
+    font-family: 'Gothic A1', sans-serif;
     top: 0;
     padding:0 15% 0 15%;
     height: 12vh;

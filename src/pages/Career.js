@@ -7,6 +7,7 @@ import { Footer } from "../components/footer";
 
 const Body = styled.div`
   position: relative;
+  font-family: 'Gothic A1', sans-serif;
 `;
 
 const Container = styled.div`

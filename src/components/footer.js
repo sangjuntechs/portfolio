@@ -7,6 +7,7 @@ const Container = styled.div`
   align-items: center;
   padding: 3rem;
   border-top: 1px solid #5b44ff;
+  font-family: 'Gothic A1', sans-serif;
   @media screen and (max-width: 500px) {
     padding: 1.5rem;
   }

@@ -5,7 +5,8 @@ import App from './App';
 import reset from 'styled-reset'
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+  
+${reset}
 `
 
 ReactDOM.render(

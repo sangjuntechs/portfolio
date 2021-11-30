@@ -22,6 +22,7 @@ const Container = styled.div`
   padding-left: 15%;
   padding-right: 15%;
   transition: all 1s;
+  font-family: 'Gothic A1', sans-serif;
   @media screen and (max-width: 500px) {
     padding-left: 0;
     padding-right: 0;
@@ -54,6 +55,7 @@ const Menu = styled.div`
   width: 100vw;
   background-color: white;
   transition: 1s;
+  font-family: 'Gothic A1', sans-serif;
 `;
 
 const Video = styled.video`
