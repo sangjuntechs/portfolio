@@ -31,7 +31,7 @@ const Font = styled.p((props) => ({
 
 export const Qna = () => {
   return (
-    <div className="container">
+    <div className="qnacontainer">
       <div className="card">
         <div className="imgBox">
           <QnaImg src={QnaJepeto1} />
