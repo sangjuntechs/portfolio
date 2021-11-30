@@ -41,6 +41,9 @@ const Section2 = styled.div`
   padding-left: 15%;
   padding-right: 15%;
   margin-top: 15rem;
+  @media screen and (max-width: 500px) {
+      padding: 0 8% 5rem 8%;
+  }
 `;
 
 const Section3 = styled.div`
@@ -52,6 +55,9 @@ const Section3 = styled.div`
   background-color: rgb(250, 250, 250);
   padding-top: 5rem;
   padding-bottom: 5rem;
+  @media screen and (max-width: 500px) {
+      padding: 5rem 8% 0 8%;
+  }
 `;
 
 const Section4 = styled.div`
@@ -66,6 +72,9 @@ const Section4 = styled.div`
   margin-top: 5rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  @media screen and (max-width: 500px) {
+      padding: 0 8% 5rem 8%;
+  }
 `;
 
 const CardContainer = styled.div`
@@ -300,7 +309,7 @@ const SkillContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 3rem;
+  padding: 0.5rem 3rem 3rem 3rem;
 `;
 
 const SkillBox = styled.div`
@@ -629,7 +638,7 @@ const About = () => {
           #3. QnA
         </MainTitle>
         <SubTitle color="#5b44ff" font_size={subTitleWidth}>
-          저의 성향을 조금 더 아실 수 있도록!
+          저는 이렇습니다!
         </SubTitle>
         <Qna />
       </Section4>

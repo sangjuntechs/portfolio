@@ -12,6 +12,9 @@ const Body = styled.div`
 const Container = styled.div`
   padding-left: 15%;
   padding-right: 15%;
+  @media screen and (max-width: 500px) {
+      padding: 0 8% 0 8%;
+  }
 `;
 
 const ItemContainer1 = styled.div`

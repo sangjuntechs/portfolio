@@ -10,6 +10,10 @@ const BodyContainer = styled.div`
 
 const ItemContainer = styled.div`
     padding: 0 15% 10rem 15%;
+    @media screen and (max-width: 500px) {
+      padding: 0 8% 5rem 8%;
+  }
+    
 `
 
 const Portfolio = () => {

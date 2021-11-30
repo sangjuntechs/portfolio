@@ -14,8 +14,9 @@ const Container = styled.nav`
     background-color: rgba(255,255,255,0.8);
     justify-content: space-between;
     z-index: 100;
-    @media screen and (max-width: 499px) {
+    @media screen and (max-width: 500px) {
     padding: 0;
+    justify-content: center;
     }
 `
 
