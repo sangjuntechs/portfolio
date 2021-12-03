@@ -223,7 +223,7 @@ const Home = () => {
           <IndigoFont>Welcome</IndigoFont> to Sangjun's Portfolio!👏🏻
         </Header>
         <Contents>
-          <Video src={Jepeto} autoPlay loop muted type="video/mp4" playsInline />
+          <Video src={Jepeto} autoPlay loop muted type="video/mp4"/>
           <TextContainer>
             <NormalText>
               안녕하세요. 작고 소중한 <IndigoFont>신입</IndigoFont> 프론트엔드
