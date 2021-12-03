@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import SprintImg from "../img/sprintImg.png";
 import JunEatsVideo from "../videos/juneats.mp4";
 import DahyangVideo from "../videos/dahyangVideo.mp4";
 import PortfolioImg from "../img/PortfolioImg.png";
+import DahyangImg from '../img/dahyangImg.png'
+import JunEatsImg from '../img/juneatsImg.png'
 
 const Container = styled.div`
   display: flex;
@@ -76,6 +78,7 @@ const ContentImg = styled.img`
 
 const Video = styled.video`
   width: 100%;
+  z-index:2;
 `;
 
 const Astyle = styled.a`
@@ -159,6 +162,26 @@ const LabelBox = styled.div`
 `;
 
 export const PortfolioItem = () => {
+
+  const [agent, setAgent] = useState('');
+
+  useEffect(() => {
+
+    let pcDevice = "win16|win32|win64|mac|macintel"
+
+    if(navigator.platform) {
+      if(pcDevice.indexOf(navigator.platform.toLowerCase()) < 0) {
+        setAgent('Mobile')
+      } else {
+        setAgent('PC')
+      }
+    }
+    console.log(agent)
+
+  }, [agent])
+ 
+  
+
   return (
     <Container>
       <ItemContainer>
@@ -264,7 +287,7 @@ export const PortfolioItem = () => {
         </ItemHeader>
         <ContentBox>
           <ContentImgSection>
-            <Video src={DahyangVideo} autoPlay loop='loop' muted='muted' type="video/mp4" playsInline />
+            {agent === 'Mobile' ? <ContentImg src={DahyangImg}/> : <Video src={DahyangVideo} autoPlay loop='loop' muted='muted' type="video/mp4" playsInline />}
           </ContentImgSection>
           <ContentTextSection>
             <Font Mid gap1>
@@ -359,7 +382,7 @@ export const PortfolioItem = () => {
         </ItemHeader>
         <ContentBox>
           <ContentImgSection>
-            <Video src={JunEatsVideo} autoPlay loop='loop' muted='muted' type="video/mp4" playsInline />
+          {agent === 'Mobile' ? <ContentImg src={JunEatsImg}/> : <Video src={JunEatsVideo} autoPlay loop='loop' muted='muted' type="video/mp4" playsInline />}
           </ContentImgSection>
           <ContentTextSection>
             <Font Mid gap1>
