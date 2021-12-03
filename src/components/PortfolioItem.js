@@ -264,7 +264,7 @@ export const PortfolioItem = () => {
         </ItemHeader>
         <ContentBox>
           <ContentImgSection>
-            <Video src={DahyangVideo} autoPlay loop muted type="video/mp4" />
+            <Video src={DahyangVideo} autoPlay loop='loop' muted='muted' type="video/mp4" playsInline />
           </ContentImgSection>
           <ContentTextSection>
             <Font Mid gap1>
@@ -359,7 +359,7 @@ export const PortfolioItem = () => {
         </ItemHeader>
         <ContentBox>
           <ContentImgSection>
-            <Video src={JunEatsVideo} autoPlay loop muted type="video/mp4" />
+            <Video src={JunEatsVideo} autoPlay loop='loop' muted='muted' type="video/mp4" playsInline />
           </ContentImgSection>
           <ContentTextSection>
             <Font Mid gap1>
