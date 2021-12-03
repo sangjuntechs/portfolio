@@ -23,6 +23,7 @@ const Card = styled.div`
 const QuoteImage = styled.img`
   width: 40px;
   height: 40px;
+  margin-bottom: 0.5rem;
 `;
 
 const Font = styled.p((props) => ({

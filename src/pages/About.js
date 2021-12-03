@@ -351,7 +351,7 @@ const About = () => {
   useEffect(() => {
     let queryWidth = window.innerWidth;
     setInnerWidth(queryWidth);
-  }, [innerWidth]);
+  }, []);
 
   let titleWidth = "2.5rem";
   let subTitleWidth = "2rem";
@@ -375,7 +375,7 @@ const About = () => {
         <CardSection>
           <GlassCard>
             <ImageSection>
-              <ProfileImg src={profileImage} />
+              <ProfileImg src={profileImage} alt='profileImg'/>
             </ImageSection>
             <CardTextSection>
               <ColumnStyle>
