@@ -26,7 +26,7 @@ const Font = styled.p`
 export const Footer = () => {
   return (
     <Container>
-      <Font>Copyright© 2021. Park sangjun. All rights reserved.</Font>
+      <Font>Copyright© 2021. Park sangjun-portfolio</Font>
     </Container>
   );
 };
